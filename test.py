@@ -4,13 +4,13 @@ import time
 import os
 
 # Path to your prime95.exe
-PRIME95_PATH = r"C:\Users\chave\Downloads\prime95\prime95.exe"
+PRIME95_PATH = r"C:\Users\Pedro\Desktop\prime95\prime95.exe"
 
 def start_prime95():
     print("Starting Prime95 torture test...")
     # Launch prime95 in torture test mode
     # /t instructs prime95 to start the torture test automatically
-    return subprocess.Popen([PRIME95_PATH, "/t"], creationflags=subprocess.CREATE_NEW_CONSOLE)
+    return subprocess.Popen([PRIME95_PATH, "-t"], creationflags=subprocess.CREATE_NEW_CONSOLE)
 
 def stop_prime95():
     print("Stopping all prime95 processes...")
