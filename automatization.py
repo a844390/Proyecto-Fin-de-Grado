@@ -16,7 +16,7 @@ CSV_FILE = r"C:\Users\Pedro\Desktop\hwinfo_log.csv"  # HWiNFO CSV
 UPDATE_INTERVAL = 10  # seconds (How often to check CSV)
 ROLLING_HISTORY = 500
 AFFINITY_INTERVAL = 180  # seconds (3 minutes - How often to rotate affinity)
-LOG_FILE = r"C:\Users\Pedro\Desktop\affinity_rotation.log"
+LOG_FILE = r"C:\Users\Pedro\Desktop\Trabajo-Fin-de-Grado\affinity_rotation.log"
 wanted_labels = ["CPU Package Power [W]"]
 SETTLING_READINGS = 3  # Number of readings to ignore after affinity change for power stabilization
 
