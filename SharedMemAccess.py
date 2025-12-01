@@ -1,162 +1,112 @@
 import ctypes
-import sys
+import time
 
-# ---- CONFIGURATION ----
+# ---- CONFIG ----
 SHMEM_NAME = "Global\\HWiNFO_SENS_SM2"
-HWINFO_SIGNATURE = 0xDEADBEEF
-MAX_DISPLAY_READINGS = 5  # Only show first 5 readings per sensor
+HWINFO_SIGNATURE = 0x53534D32  # Example signature, adjust if needed
+READ_INTERVAL = 2  # seconds
 
-# Example IDs (replace with actual IDs from your system)
-SENSOR_ID = 0xF0002A00
-SENSOR_INST = 0x0
-READING_ID = 0x5000000
+# ---- HWiNFO Structures ----
+HWI_STRING_LEN2 = 128
+HWI_UNIT_STRING_LEN = 16
 
-FILE_MAP_READ = 0x0004
-kernel32 = ctypes.windll.kernel32
-
-# ---- STRUCTS ----
-class HWiNFO_READING(ctypes.Structure):
+class SmSensorsReadingElement(ctypes.Structure):
     _fields_ = [
-        ("dwSensorID", ctypes.c_uint32),
-        ("dwSensorInst", ctypes.c_uint32),
-        ("dwReadingID", ctypes.c_uint32),
+        ("Type", ctypes.c_uint),
+        ("Idx", ctypes.c_uint),
+        ("Id", ctypes.c_uint),
+        ("LabelOrig", ctypes.c_char * HWI_STRING_LEN2),
+        ("LabelUser", ctypes.c_char * HWI_STRING_LEN2),
+        ("Unit", ctypes.c_char * HWI_UNIT_STRING_LEN),
         ("Value", ctypes.c_double),
         ("ValueMin", ctypes.c_double),
         ("ValueMax", ctypes.c_double),
-        ("dwReserved", ctypes.c_uint32 * 8)
+        ("ValueAvg", ctypes.c_double),
     ]
 
-class HWiNFO_SENSOR(ctypes.Structure):
+class SmSensorsSensorElement(ctypes.Structure):
     _fields_ = [
-        ("dwSensorID", ctypes.c_uint32),
-        ("dwSensorInst", ctypes.c_uint32),
-        ("dwReadingIDCount", ctypes.c_uint32),
-        ("_padding", ctypes.c_uint32)  # align to 16 bytes
+        ("Id", ctypes.c_uint),
+        ("Instance", ctypes.c_uint),
+        ("LabelOrig", ctypes.c_char * HWI_STRING_LEN2),
+        ("LabelUser", ctypes.c_char * HWI_STRING_LEN2),
     ]
 
-class HWiNFO_HEADER(ctypes.Structure):
+class SmSensorsSharedMem2(ctypes.Structure):
     _fields_ = [
-        ("Signature", ctypes.c_uint32),
-        ("Version", ctypes.c_uint32),
-        ("Revision", ctypes.c_uint32),
-        ("PollingPeriod", ctypes.c_uint32),
-        ("dwSensorCount", ctypes.c_uint32)
+        ("Signature", ctypes.c_uint),
+        ("Version", ctypes.c_uint),
+        ("Revision", ctypes.c_uint),
+        ("PollTime", ctypes.c_int64),
+        ("SensorSection_Offset", ctypes.c_uint),
+        ("SensorSection_SizeOfElement", ctypes.c_uint),
+        ("SensorSection_NumElements", ctypes.c_uint),
+        ("ReadingSection_Offset", ctypes.c_uint),
+        ("ReadingSection_SizeOfElement", ctypes.c_uint),
+        ("ReadingElements_NumElements", ctypes.c_uint),
     ]
 
-# ---- MEMORY FUNCTIONS ----
-def open_hwinfo_shared_memory():
-    """Open HWiNFO shared memory and return pointer with logging."""
-    print("[LOG] Attempting to open HWiNFO shared memory...")
-    print(f"[LOG] Memory Name: {SHMEM_NAME}")
+# ---- WINDOWS API ----
+kernel32 = ctypes.windll.kernel32
+FILE_MAP_READ = 0x0004
 
+def open_shared_memory():
     h_map = kernel32.OpenFileMappingW(FILE_MAP_READ, False, SHMEM_NAME)
     if not h_map:
-        print(f"[ERROR] HWiNFO shared memory '{SHMEM_NAME}' not found.")
-        print("[ERROR] Make sure HWiNFO is running and 'Shared Memory Support' is enabled.")
-        sys.exit(1)
-    else:
-        print(f"[LOG] OpenFileMappingW succeeded. Handle: {h_map}")
-
+        raise RuntimeError("Cannot open HWiNFO shared memory. Make sure HWiNFO is running with shared memory enabled.")
     ptr = kernel32.MapViewOfFile(h_map, FILE_MAP_READ, 0, 0, 0)
-    if not ptr:
-        print("[ERROR] Failed to map view of HWiNFO shared memory.")
-        kernel32.CloseHandle(h_map)
-        sys.exit(1)
-    else:
-        print(f"[LOG] MapViewOfFile succeeded. Pointer: {hex(ptr)}")
-
-    # Close the handle; mapping remains valid
     kernel32.CloseHandle(h_map)
-    print("[LOG] Closed file mapping handle, pointer is still valid.")
     return ptr
 
+def read_struct(ptr, struct_type, offset=0):
+    addr = ptr + offset
+    return struct_type.from_address(addr)
 
-def close_hwinfo_shared_memory(ptr):
-    if ptr:
-        kernel32.UnmapViewOfFile(ptr)
+# ---- SENSOR READING ----
+class SensorReading:
+    def __init__(self, reading, sensor):
+        self.Id = reading.Id
+        self.Index = reading.Idx
+        self.Type = reading.Type
+        self.LabelOrig = reading.LabelOrig.decode(errors="ignore").rstrip("\x00")
+        self.LabelUser = reading.LabelUser.decode(errors="ignore").rstrip("\x00")
+        self.Unit = reading.Unit.decode(errors="ignore").rstrip("\x00")
+        self.Value = reading.Value
+        self.ValueMin = reading.ValueMin
+        self.ValueMax = reading.ValueMax
+        self.ValueAvg = reading.ValueAvg
+        self.GroupId = sensor.Id
+        self.GroupInstanceId = sensor.Instance
+        self.GroupLabelUser = sensor.LabelUser.decode(errors="ignore").rstrip("\x00")
+        self.GroupLabelOrig = sensor.LabelOrig.decode(errors="ignore").rstrip("\x00")
 
-# ---- READ SPECIFIC VALUE ----
-def read_hwinfo_value(sensor_id, sensor_inst, reading_id):
-    print("[LOG] Opening HWiNFO shared memory...")
-    ptr = open_hwinfo_shared_memory()
-    try:
-        print("[LOG] Reading header...")
-        header = HWiNFO_HEADER.from_address(ptr)
-        print(f"[LOG] Header Signature={hex(header.Signature)}, SensorCount={header.dwSensorCount}")
+# ---- MAIN READ FUNCTION ----
+def read_hwinfo_sensors():
+    ptr = open_shared_memory()
+    header = read_struct(ptr, SmSensorsSharedMem2)
+    sensors = []
+    readings = []
 
-        if header.Signature != HWINFO_SIGNATURE:
-            raise RuntimeError("HWiNFO shared memory signature mismatch.")
+    sensor_base = ptr + header.SensorSection_Offset
+    for i in range(header.SensorSection_NumElements):
+        s = read_struct(sensor_base + i * header.SensorSection_SizeOfElement, SmSensorsSensorElement)
+        sensors.append(s)
 
-        sensor_ptr = ptr + ctypes.sizeof(HWiNFO_HEADER)
-        print("[LOG] Starting to iterate over sensors...")
-        for s_index in range(header.dwSensorCount):
-            print(f"[LOG] Reading sensor {s_index} at address {hex(sensor_ptr)}")
-            sensor = HWiNFO_SENSOR.from_address(sensor_ptr)
-            print(f"[LOG] Sensor ID={hex(sensor.dwSensorID)}, Inst={sensor.dwSensorInst}, ReadingCount={sensor.dwReadingIDCount}")
+    reading_base = ptr + header.ReadingSection_Offset
+    for i in range(header.ReadingElements_NumElements):
+        r = read_struct(reading_base + i * header.ReadingSection_SizeOfElement, SmSensorsReadingElement)
+        readings.append(r)
 
-            readings_ptr = sensor_ptr + ctypes.sizeof(HWiNFO_SENSOR)
+    result = [SensorReading(r, sensors[r.Idx]) for r in readings]
+    return result
 
-            if sensor.dwSensorID == sensor_id and sensor.dwSensorInst == sensor_inst:
-                print(f"[LOG] Target sensor matched. Iterating over {sensor.dwReadingIDCount} readings...")
-                for r in range(sensor.dwReadingIDCount):
-                    reading_addr = readings_ptr + r * ctypes.sizeof(HWiNFO_READING)
-                    reading = HWiNFO_READING.from_address(reading_addr)
-                    print(f"[LOG] Reading {r}: ID={hex(reading.dwReadingID)}, Value={reading.Value}")
-                    if reading.dwReadingID == reading_id:
-                        print("[LOG] Target reading matched. Returning value.")
-                        return reading.Value
-
-            # Move to next sensor
-            sensor_ptr = readings_ptr + sensor.dwReadingIDCount * ctypes.sizeof(HWiNFO_READING)
-            print(f"[LOG] Moving to next sensor at address {hex(sensor_ptr)}")
-
-        print("[LOG] Target sensor/reading not found in shared memory.")
-        return None
-    finally:
-        print("[LOG] Closing shared memory.")
-        close_hwinfo_shared_memory(ptr)
-
-
-# ---- LIST SENSORS ----
-def list_hwinfo_sensors():
-    """
-    List sensors and a few readings per sensor to explore IDs.
-    """
-    print("[LOG] Opening HWiNFO shared memory...")
-    ptr = open_hwinfo_shared_memory()
-    header = HWiNFO_HEADER.from_address(ptr)
-    print("Raw header:", [header.Signature, header.Version, header.Revision, header.PollingPeriod, header.dwSensorCount])
-
-    try:
-        header = HWiNFO_HEADER.from_address(ptr)
-        if header.Signature != HWINFO_SIGNATURE:
-            raise RuntimeError("HWiNFO shared memory signature mismatch.")
-
-        print(f"Found {header.dwSensorCount} sensors:\n")
-
-        sensor_ptr = ptr + ctypes.sizeof(HWiNFO_HEADER)
-        for s_index in range(header.dwSensorCount):
-            sensor = HWiNFO_SENSOR.from_address(sensor_ptr)
-            print(f"Sensor {s_index}: ID={hex(sensor.dwSensorID)}, Inst={sensor.dwSensorInst}, Readings={sensor.dwReadingIDCount}")
-
-            readings_ptr = sensor_ptr + ctypes.sizeof(HWiNFO_SENSOR)
-            for r in range(min(sensor.dwReadingIDCount, MAX_DISPLAY_READINGS)):
-                reading = HWiNFO_READING.from_address(readings_ptr + r * ctypes.sizeof(HWiNFO_READING))
-                print(f"  Reading {r}: ID={hex(reading.dwReadingID)}, Value={reading.Value:.2f}, Min={reading.ValueMin:.2f}, Max={reading.ValueMax:.2f}")
-            if sensor.dwReadingIDCount > MAX_DISPLAY_READINGS:
-                print(f"  ... ({sensor.dwReadingIDCount - MAX_DISPLAY_READINGS} more readings)")
-            print("-" * 50)
-
-            # Move to next sensor
-            sensor_ptr = readings_ptr + sensor.dwReadingIDCount * ctypes.sizeof(HWiNFO_READING)
-
-    finally:
-        close_hwinfo_shared_memory(ptr)
-
-# ---- MAIN ----
+# ---- FILTERED LOOP ----
 if __name__ == "__main__":
-    print("Listing sensors and first few readings:\n")
     try:
-        list_hwinfo_sensors()
+        sensor_data = read_hwinfo_sensors()
+        print(f"Read {len(sensor_data)} sensor readings:")
+        for s in sensor_data:
+            print(f"{s.LabelUser}: {s.Value} {s.Unit} (Type {s.Type})")
     except Exception as e:
-        print(f"Error: {e}")
+        print("Error reading HWiNFO shared memory:", e)
+
