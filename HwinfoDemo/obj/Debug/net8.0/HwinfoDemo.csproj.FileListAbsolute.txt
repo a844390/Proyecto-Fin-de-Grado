@@ -1,0 +1,15 @@
+C:\Users\chave\Documents\UNI\TFG\Proyecto-Fin-de-Grado\HwinfoDemo\bin\Debug\net8.0\HwinfoDemo.exe
+C:\Users\chave\Documents\UNI\TFG\Proyecto-Fin-de-Grado\HwinfoDemo\bin\Debug\net8.0\HwinfoDemo.deps.json
+C:\Users\chave\Documents\UNI\TFG\Proyecto-Fin-de-Grado\HwinfoDemo\bin\Debug\net8.0\HwinfoDemo.runtimeconfig.json
+C:\Users\chave\Documents\UNI\TFG\Proyecto-Fin-de-Grado\HwinfoDemo\bin\Debug\net8.0\HwinfoDemo.dll
+C:\Users\chave\Documents\UNI\TFG\Proyecto-Fin-de-Grado\HwinfoDemo\bin\Debug\net8.0\HwinfoDemo.pdb
+C:\Users\chave\Documents\UNI\TFG\Proyecto-Fin-de-Grado\HwinfoDemo\obj\Debug\net8.0\HwinfoDemo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chave\Documents\UNI\TFG\Proyecto-Fin-de-Grado\HwinfoDemo\obj\Debug\net8.0\HwinfoDemo.AssemblyInfoInputs.cache
+C:\Users\chave\Documents\UNI\TFG\Proyecto-Fin-de-Grado\HwinfoDemo\obj\Debug\net8.0\HwinfoDemo.AssemblyInfo.cs
+C:\Users\chave\Documents\UNI\TFG\Proyecto-Fin-de-Grado\HwinfoDemo\obj\Debug\net8.0\HwinfoDemo.csproj.CoreCompileInputs.cache
+C:\Users\chave\Documents\UNI\TFG\Proyecto-Fin-de-Grado\HwinfoDemo\obj\Debug\net8.0\HwinfoDemo.sourcelink.json
+C:\Users\chave\Documents\UNI\TFG\Proyecto-Fin-de-Grado\HwinfoDemo\obj\Debug\net8.0\HwinfoDemo.dll
+C:\Users\chave\Documents\UNI\TFG\Proyecto-Fin-de-Grado\HwinfoDemo\obj\Debug\net8.0\refint\HwinfoDemo.dll
+C:\Users\chave\Documents\UNI\TFG\Proyecto-Fin-de-Grado\HwinfoDemo\obj\Debug\net8.0\HwinfoDemo.pdb
+C:\Users\chave\Documents\UNI\TFG\Proyecto-Fin-de-Grado\HwinfoDemo\obj\Debug\net8.0\HwinfoDemo.genruntimeconfig.cache
+C:\Users\chave\Documents\UNI\TFG\Proyecto-Fin-de-Grado\HwinfoDemo\obj\Debug\net8.0\ref\HwinfoDemo.dll

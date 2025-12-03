@@ -65,7 +65,11 @@ public class SharedMemoryReader : IDisposable
     try
     {
       _mutex.WaitOne(_mutexTimeout);
-      using var mmf = MemoryMappedFile.OpenExisting(fileName, MemoryMappedFileRights.Read);
+      #pragma warning disable CA1416
+      var mmf = MemoryMappedFile.OpenExisting(fileName, MemoryMappedFileRights.Read);
+      #pragma warning restore CA1416
+
+      //using var mmf = MemoryMappedFile.OpenExisting(fileName, MemoryMappedFileRights.Read);
       return ReadSensorReadings(mmf);
     }
     finally
