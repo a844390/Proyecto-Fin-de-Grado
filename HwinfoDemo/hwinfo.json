@@ -1,0 +1,14 @@
+{
+  "sensor_p_core_0_clock": {
+    "Value": 500,
+    "Unit": "MHz"
+  },
+  "sensor_p_core_0": {
+    "Value": 30,
+    "Unit": "\u00B0C"
+  },
+  "sensor_cpu_package_power": {
+    "Value": 18.063563742695848,
+    "Unit": "W"
+  }
+}

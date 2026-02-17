@@ -18,10 +18,9 @@ PORT = 8080
 USERNAME = "emoncms"
 PASSWORD = "paip2020"
 TOPIC = "cooler"
-DEVICE = ["vatimetro", "hwinfo", "pcm"]
+DEVICE = "vatimetro"
 # Serial settings
 DEFAULT_SERIAL_PORT = "COM4"
-HWINFO_JSON_PATH = "hwinfo.json"
 BAUDRATE = 9600
 TIMEOUT = 1  # segundos
 
@@ -49,20 +48,6 @@ def parse_line(line):
 
     return vin, iin, w
 
-def read_hwinfo_json(path):
-    try:
-        with open(path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-
-        fields = {}
-        for name, obj in data.items():
-            if "Value" in obj:
-                fields[name] = obj["Value"]
-
-        return fields
-
-    except Exception:
-        return None
 
 
 def main():
@@ -86,8 +71,6 @@ def main():
     print(f"Leyendo datos de {serial_port} y enviando a MQTT...")
 
     vin_val, iin_val, w_val = None, None, None
-    last_hwinfo_time = 0
-    HWINFO_INTERVAL = 2  # Leer HWiNFO cada 2 segundos para no saturar
     try:
         while True:
             line = ser.readline().decode(errors="ignore")
@@ -108,7 +91,7 @@ def main():
             if vin_val is not None and iin_val is not None and w_val is not None:
                 payload = {
                     "measurement": "power_in",
-                    "tags": {"device": DEVICE[0]},
+                    "tags": {"device": DEVICE},
                     "fields": {
                         "ver": "1",
                         "Vin": vin_val,
@@ -123,30 +106,6 @@ def main():
 
                 # Reset para esperar la siguiente serie
                 vin_val, iin_val, w_val = None, None, None
-            
-                # 2. GESTIÓN DE HWINFO (VÍA ARCHIVO JSON)
-                # Solo leemos si ha pasado el intervalo definido
-                current_time = time.time()
-                if current_time - last_hwinfo_time > HWINFO_INTERVAL:
-                    hwinfo_fields = read_hwinfo_json(HWINFO_JSON_PATH)
-                    
-                    if hwinfo_fields:
-                        payload_hwinfo = {
-                            "measurement": "hwinfo_data", # NOMBRE DISTINTO AQUÍ
-                            "tags": {"device": DEVICE[1]},
-                            "fields": {
-                                "ver": "1",
-                                **hwinfo_fields
-                            }
-                        }
-
-                    msg_hwinfo = json.dumps(payload_hwinfo, separators=(",", ":"), ensure_ascii=False)
-                    info = client.publish(TOPIC, msg_hwinfo, qos=0, retain=False)
-                    info.wait_for_publish(timeout=5)
-                    print(f"Enviado: {msg_hwinfo}")
-
-                    hwinfo_fields = None
-
             # Opcional: pequeña espera para no saturar CPU
             time.sleep(0.1)
 
