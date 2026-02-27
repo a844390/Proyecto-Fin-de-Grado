@@ -1,0 +1,198 @@
+sensor_real,sensor_json,metric,collect
+Vcore,vcore,Voltage
+Voltage #2,voltage_2,Voltage
+AVCC,avcc,Voltage
++3.3V,3_3v,Voltage
+Voltage #5,voltage_5,Voltage
+Voltage #6,voltage_6,Voltage
+Voltage #7,voltage_7,Voltage
++3V Standby,3v_standby,Voltage
+CPU Termination,cpu_termination,Voltage
+Voltage #11,voltage_11,Voltage
+Voltage #12,voltage_12,Voltage
+Voltage #13,voltage_13,Voltage
+Voltage #14,voltage_14,Voltage
+Voltage #15,voltage_15,Voltage
+Temperature #1,temperature_1,Temperature
+Temperature #2,temperature_2,Temperature
+Temperature #3,temperature_3,Temperature
+Temperature #4,temperature_4,Temperature
+Temperature #5,temperature_5,Temperature
+Fan #1,fan_1,Fan
+Fan #2,ventiladores,Fan,v
+Fan #3,fan_3,Fan
+Fan #4,fan_4,Fan
+Fan #5,fan_5,Fan
+Fan #6,fan_6,Fan
+Fan #7,bomba,Fan,v
+Fan #1,fan_1_control,Control
+Fan #2,fan_2_control,Control
+Fan #3,fan_3_control,Control
+Fan #4,fan_4_control,Control
+Fan #5,fan_5_control,Control
+Fan #6,fan_6_control,Control
+Fan #7,fan_7_control,Control
+CPU Core,cpu_core,Voltage,v
+P-Core #1,p_core_1,Voltage,v
+P-Core #2,p_core_2,Voltage,v
+E-Core #1,e_core_1,Voltage,v
+E-Core #2,e_core_2,Voltage,v
+E-Core #3,e_core_3,Voltage,v
+E-Core #4,e_core_4,Voltage,v
+P-Core #3,p_core_3,Voltage,v
+P-Core #4,p_core_4,Voltage,v
+P-Core #5,p_core_5,Voltage,v
+P-Core #6,p_core_6,Voltage,v
+E-Core #5,e_core_5,Voltage,v
+E-Core #6,e_core_6,Voltage,v
+E-Core #7,e_core_7,Voltage,v
+E-Core #8,e_core_8,Voltage,v
+E-Core #9,e_core_9,Voltage,v
+E-Core #10,e_core_10,Voltage,v
+E-Core #11,e_core_11,Voltage,v
+E-Core #12,e_core_12,Voltage,v
+P-Core #7,p_core_7,Voltage,v
+P-Core #8,p_core_8,Voltage,v
+CPU Package,cpu_package,Power,v
+CPU Cores,cpu_cores,Power,v
+CPU Memory,cpu_memory,Power
+CPU Platform,cpu_platform,Power
+Bus Speed,bus_speed,Clock
+P-Core #1,p_core_1_clock,Clock,v
+P-Core #2,p_core_2_clock,Clock,v
+E-Core #1,e_core_1_clock,Clock,v
+E-Core #2,e_core_2_clock,Clock,v
+E-Core #3,e_core_3_clock,Clock,v
+E-Core #4,e_core_4_clock,Clock,v
+P-Core #3,p_core_3_clock,Clock,v
+P-Core #4,p_core_4_clock,Clock,v
+P-Core #5,p_core_5_clock,Clock,v
+P-Core #6,p_core_6_clock,Clock,v
+E-Core #5,e_core_5_clock,Clock,v
+E-Core #6,e_core_6_clock,Clock,v
+E-Core #7,e_core_7_clock,Clock,v
+E-Core #8,e_core_8_clock,Clock,v
+E-Core #9,e_core_9_clock,Clock,v
+E-Core #10,e_core_10_clock,Clock,v
+E-Core #11,e_core_11_clock,Clock,v
+E-Core #12,e_core_12_clock,Clock,v
+P-Core #7,p_core_7_clock,Clock,v
+P-Core #8,p_core_8_clock,Clock,v
+Core Max,core_max,Temperature,v
+Core Average,core_average,Temperature,v
+P-Core #1,p_core_1_temp,Temperature,v
+P-Core #2,p_core_2_temp,Temperature,v
+E-Core #1,e_core_1_temp,Temperature,v
+E-Core #2,e_core_2_temp,Temperature,v
+E-Core #3,e_core_3_temp,Temperature,v
+E-Core #4,e_core_4_temp,Temperature,v
+P-Core #3,p_core_3_temp,Temperature,v
+P-Core #4,p_core_4_temp,Temperature,v
+P-Core #5,p_core_5_temp,Temperature,v
+P-Core #6,p_core_6_temp,Temperature,v
+E-Core #5,e_core_5_temp,Temperature,v
+E-Core #6,e_core_6_temp,Temperature,v
+E-Core #7,e_core_7_temp,Temperature,v
+E-Core #8,e_core_8_temp,Temperature,v
+E-Core #9,e_core_9_temp,Temperature,v
+E-Core #10,e_core_10_temp,Temperature,v
+E-Core #11,e_core_11_temp,Temperature,v
+E-Core #12,e_core_12_temp,Temperature,v
+P-Core #7,p_core_7_temp,Temperature,v
+P-Core #8,p_core_8_temp,Temperature,v
+CPU Package,cpu_package_temp,Temperature,v
+P-Core #1 Distance to TjMax,p_core_1_distance,Temperature
+P-Core #2 Distance to TjMax,p_core_2_distance,Temperature
+E-Core #1 Distance to TjMax,e_core_1_distance,Temperature
+E-Core #2 Distance to TjMax,e_core_2_distance,Temperature
+E-Core #3 Distance to TjMax,e_core_3_distance,Temperature
+E-Core #4 Distance to TjMax,e_core_4_distance,Temperature
+P-Core #3 Distance to TjMax,p_core_3_distance,Temperature
+P-Core #4 Distance to TjMax,p_core_4_distance,Temperature
+P-Core #5 Distance to TjMax,p_core_5_distance,Temperature
+P-Core #6 Distance to TjMax,p_core_6_distance,Temperature
+E-Core #5 Distance to TjMax,e_core_5_distance,Temperature
+E-Core #6 Distance to TjMax,e_core_6_distance,Temperature
+E-Core #7 Distance to TjMax,e_core_7_distance,Temperature
+E-Core #8 Distance to TjMax,e_core_8_distance,Temperature
+E-Core #9 Distance to TjMax,e_core_9_distance,Temperature
+E-Core #10 Distance to TjMax,e_core_10_distance,Temperature
+E-Core #11 Distance to TjMax,e_core_11_distance,Temperature
+E-Core #12 Distance to TjMax,e_core_12_distance,Temperature
+P-Core #7 Distance to TjMax,p_core_7_distance,Temperature
+P-Core #8 Distance to TjMax,p_core_8_distance,Temperature
+CPU Total,cpu_total_load,Load
+CPU Core Max,cpu_core_max_load,Load
+CPU Core #1,cpu_core_1_load,Load
+CPU Core #2,cpu_core_2_load,Load
+CPU Core #3,cpu_core_3_load,Load
+CPU Core #4,cpu_core_4_load,Load
+CPU Core #5,cpu_core_5_load,Load
+CPU Core #6,cpu_core_6_load,Load
+CPU Core #7,cpu_core_7_load,Load
+CPU Core #8,cpu_core_8_load,Load
+CPU Core #9,cpu_core_9_load,Load
+CPU Core #10,cpu_core_10_load,Load
+CPU Core #11,cpu_core_11_load,Load
+CPU Core #12,cpu_core_12_load,Load
+CPU Core #13,cpu_core_13_load,Load
+CPU Core #14,cpu_core_14_load,Load
+CPU Core #15,cpu_core_15_load,Load
+CPU Core #16,cpu_core_16_load,Load
+CPU Core #17,cpu_core_17_load,Load
+CPU Core #18,cpu_core_18_load,Load
+CPU Core #19,cpu_core_19_load,Load
+CPU Core #20,cpu_core_20_load,Load
+Memory,memory_load,Load
+Memory Used,memory_used,Data
+Memory Available,memory_available,Data
+DIMM #1,dimm_1_temp,Temperature
+DIMM #3,dimm_3_temp,Temperature
+Capacity,capacity,Data
+GPU Core,gpu_core_clock,Clock
+GPU Memory,gpu_memory_clock,Clock
+GPU Core,gpu_core_temp,Temperature
+GPU Memory Controller,gpu_memory_controller_load,Load
+GPU Video Engine,gpu_video_engine_load,Load
+GPU Memory,gpu_memory_load,Load
+GPU Bus,gpu_bus_load,Load
+D3D 3D,d3d_3d_load,Load
+D3D Compute_0,d3d_compute_0_load,Load
+D3D Compute_1,d3d_compute_1_load,Load
+D3D Copy,d3d_copy_load,Load
+D3D Overlay,d3d_overlay_load,Load
+D3D Video Decode,d3d_video_decode_load,Load
+D3D Video Encode,d3d_video_encode_load,Load
+D3D VR,d3d_vr_load,Load
+GPU Memory Free,gpu_memory_free,SmallData
+GPU Memory Used,gpu_memory_used,SmallData
+GPU Memory Total,gpu_memory_total,SmallData
+D3D Dedicated Memory Used,d3d_dedicated_memory_used,SmallData
+D3D Shared Memory Used,d3d_shared_memory_used,SmallData
+Composite Temperature,composite_temp,Temperature
+Temperature #1,temperature_1_gpu,Temperature
+Temperature #2,temperature_2_gpu,Temperature
+Temperature #3,temperature_3_gpu,Temperature
+Warning Temperature,warning_temp,Temperature
+Critical Temperature,critical_temp,Temperature
+Used Space,used_space_load,Load
+Read Activity,read_activity_load,Load
+Write Activity,write_activity_load,Load
+Total Activity,total_activity_load,Load
+Life,life_level,Level
+Available Spare,available_spare_level,Level
+Available Spare Threshold,available_spare_threshold_level,Level
+Percentage Used,percentage_used_level,Level
+Power On Count,power_on_count_factor,Factor
+Power On Hours,power_on_hours_factor,Factor
+Data Read,data_read_data,Data
+Data Written,data_written_data,Data
+Free Space,free_space_data,Data
+Total Space,total_space_data,Data
+Read Rate,read_rate_throughput,Throughput
+Write Rate,write_rate_throughput,Throughput
+Network Utilization,network_utilization_load,Load
+Data Uploaded,data_uploaded_data,Data
+Data Downloaded,data_downloaded_data,Data
+Upload Speed,upload_speed_throughput,Throughput
+Download Speed,download_speed_throughput,Throughput

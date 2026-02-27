@@ -1,0 +1,140 @@
+DEBUG: Setting Ctrl+C done.
+
+ Intel(r) Performance Counter Monitor ($Format:%ci ID=%h$)
+
+
+Starting MSR service failed with error 577 Windows no puede comprobar la firma digital en este archivo. Un cambio reciente en el hardware o en el software podría haber instalado un archivo con una firma incorrecta o dañada, o podría también tratarse de un software malintencionado proveniente de un origen desconocido.
+Trying to load winring0.dll/winring0.sys driver...
+Using winring0.dll/winring0.sys driver.
+
+
+=====  Processor information  =====
+Hybrid processor         : yes
+IBRS and IBPB supported  : yes
+STIBP supported          : yes
+Spec arch caps supported : yes
+Max CPUID level          : 35
+CPU family               : 6
+CPU model number         : 198
+Number of logical cores: 20
+Number of online logical cores: 20
+Threads (logical cores) per physical core: 1 (maybe imprecise due to core offlining/hybrid CPU)
+Offlined cores: 
+Num sockets: 1
+Physical cores per socket: 20 (maybe imprecise due to core offlining/hybrid CPU)
+Core PMU (perfmon) version: 6
+Number of core PMU generic (programmable) counters: 8
+Width of generic (programmable) counters: 48 bits
+Number of core PMU fixed counters: 3
+Width of fixed counters: 48 bits
+Nominal core frequency: 3900000000 Hz
+IBRS enabled in the kernel   : yes
+STIBP enabled in the kernel  : no
+The processor is not susceptible to Rogue Data Cache Load: yes
+The processor supports enhanced IBRS                     : yes
+Package thermal spec power: 125 Watt; Package minimum power: 0 Watt; Package maximum power: 0 Watt;
+
+ERROR: winpmem_x64.sys not found in current directory. Download it from https://github.com/Velocidex/WinPmem/blob/f044f340dd05658d026b0f293cdfa92876159872/kernel/binaries/winpmem_x64.sys .
+ERROR: Memory bandwidth statistics will not be available.
+Socket 0: 0 PCU units detected. 0 IIO units detected. 0 IRP units detected. 0 CHA/CBO units detected. 0 MDF units detected. 0 UBOX units detected. 0 CXL units detected. 0 PCIE_GEN5x16 units detected. 0 PCIE_GEN5x8 units detected.
+
+
+Detected Intel(R) Core(TM) Ultra 7 265KF "Intel(r) microarchitecture codename Arrow Lake" stepping 2 microcode level 0x110
+DEBUG: caught signal to interrupt: Ctrl-C event
+Cleaning up
+DEBUG: Setting Ctrl+C done.
+
+ Intel(r) Performance Counter Monitor ($Format:%ci ID=%h$)
+
+
+Starting MSR service failed with error 577 Windows no puede comprobar la firma digital en este archivo. Un cambio reciente en el hardware o en el software podría haber instalado un archivo con una firma incorrecta o dañada, o podría también tratarse de un software malintencionado proveniente de un origen desconocido.
+Trying to load winring0.dll/winring0.sys driver...
+Using winring0.dll/winring0.sys driver.
+
+
+=====  Processor information  =====
+Hybrid processor         : yes
+IBRS and IBPB supported  : yes
+STIBP supported          : yes
+Spec arch caps supported : yes
+Max CPUID level          : 35
+CPU family               : 6
+CPU model number         : 198
+Number of logical cores: 20
+Number of online logical cores: 20
+Threads (logical cores) per physical core: 1 (maybe imprecise due to core offlining/hybrid CPU)
+Offlined cores: 
+Num sockets: 1
+Physical cores per socket: 20 (maybe imprecise due to core offlining/hybrid CPU)
+Core PMU (perfmon) version: 6
+Number of core PMU generic (programmable) counters: 8
+Width of generic (programmable) counters: 48 bits
+Number of core PMU fixed counters: 3
+Width of fixed counters: 48 bits
+Nominal core frequency: 3900000000 Hz
+IBRS enabled in the kernel   : yes
+STIBP enabled in the kernel  : no
+The processor is not susceptible to Rogue Data Cache Load: yes
+The processor supports enhanced IBRS                     : yes
+Package thermal spec power: 125 Watt; Package minimum power: 0 Watt; Package maximum power: 0 Watt;
+
+ERROR: winpmem_x64.sys not found in current directory. Download it from https://github.com/Velocidex/WinPmem/blob/f044f340dd05658d026b0f293cdfa92876159872/kernel/binaries/winpmem_x64.sys .
+ERROR: Memory bandwidth statistics will not be available.
+Socket 0: 0 PCU units detected. 0 IIO units detected. 0 IRP units detected. 0 CHA/CBO units detected. 0 MDF units detected. 0 UBOX units detected. 0 CXL units detected. 0 PCIE_GEN5x16 units detected. 0 PCIE_GEN5x8 units detected.
+
+WARNING: Custom counter 0 is in use. MSR_PERF_GLOBAL_INUSE on core 4: 0x800000070000000f
+WARNING: Custom counter 1 is in use. MSR_PERF_GLOBAL_INUSE on core 4: 0x800000070000000f
+WARNING: Custom counter 2 is in use. MSR_PERF_GLOBAL_INUSE on core 4: 0x800000070000000f
+WARNING: Custom counter 3 is in use. MSR_PERF_GLOBAL_INUSE on core 4: 0x800000070000000f
+WARNING: Core 4 IA32_PERFEVTSEL0_ADDR is not zeroed 4407598
+Access to Intel(r) Performance Counter Monitor has denied (Performance Monitoring Unit is occupied by other application). Try to stop the application that uses PMU.
+Alternatively you can try running PCM with option -r to reset PMU.
+Cleaning up
+ Zeroed PMU registers
+ Zeroed uncore PMU registers
+DEBUG: Setting Ctrl+C done.
+
+ Intel(r) Performance Counter Monitor ($Format:%ci ID=%h$)
+
+
+Starting MSR service failed with error 577 Windows no puede comprobar la firma digital en este archivo. Un cambio reciente en el hardware o en el software podría haber instalado un archivo con una firma incorrecta o dañada, o podría también tratarse de un software malintencionado proveniente de un origen desconocido.
+Trying to load winring0.dll/winring0.sys driver...
+Using winring0.dll/winring0.sys driver.
+
+
+=====  Processor information  =====
+Hybrid processor         : yes
+IBRS and IBPB supported  : yes
+STIBP supported          : yes
+Spec arch caps supported : yes
+Max CPUID level          : 35
+CPU family               : 6
+CPU model number         : 198
+Number of logical cores: 20
+Number of online logical cores: 20
+Threads (logical cores) per physical core: 1 (maybe imprecise due to core offlining/hybrid CPU)
+Offlined cores: 
+Num sockets: 1
+Physical cores per socket: 20 (maybe imprecise due to core offlining/hybrid CPU)
+Core PMU (perfmon) version: 6
+Number of core PMU generic (programmable) counters: 8
+Width of generic (programmable) counters: 48 bits
+Number of core PMU fixed counters: 3
+Width of fixed counters: 48 bits
+Nominal core frequency: 3900000000 Hz
+IBRS enabled in the kernel   : yes
+STIBP enabled in the kernel  : no
+The processor is not susceptible to Rogue Data Cache Load: yes
+The processor supports enhanced IBRS                     : yes
+Package thermal spec power: 125 Watt; Package minimum power: 0 Watt; Package maximum power: 0 Watt;
+
+ERROR: winpmem_x64.sys not found in current directory. Download it from https://github.com/Velocidex/WinPmem/blob/f044f340dd05658d026b0f293cdfa92876159872/kernel/binaries/winpmem_x64.sys .
+ERROR: Memory bandwidth statistics will not be available.
+Socket 0: 0 PCU units detected. 0 IIO units detected. 0 IRP units detected. 0 CHA/CBO units detected. 0 MDF units detected. 0 UBOX units detected. 0 CXL units detected. 0 PCIE_GEN5x16 units detected. 0 PCIE_GEN5x8 units detected.
+
+
+Detected Intel(R) Core(TM) Ultra 7 265KF "Intel(r) microarchitecture codename Arrow Lake" stepping 2 microcode level 0x110
+DEBUG: caught signal to interrupt: Ctrl-C event
+Cleaning up
+ Zeroed PMU registers
+ Zeroed uncore PMU registers

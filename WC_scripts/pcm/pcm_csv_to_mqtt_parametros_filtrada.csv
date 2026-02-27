@@ -1,0 +1,29 @@
+component,metric
+System,EXEC
+System,IPC
+System,FREQ
+System,AFREQ
+System,CFREQ
+System,L3MPI
+System,L2MPI
+System,INST
+System,ACYC
+System,TIME(ticks)
+System,Proc Energy (Joules)
+
+Socket 0,TEMP
+
+Proc Energy (Joules),SKT0
+
+Core0 (Socket 0),EXEC
+Core0 (Socket 0),IPC
+Core0 (Socket 0),FREQ
+Core0 (Socket 0),AFREQ
+Core0 (Socket 0),CFREQ
+Core0 (Socket 0),L3MPI
+Core0 (Socket 0),L2MPI
+Core0 (Socket 0),C0res%
+Core0 (Socket 0),TEMP
+Core0 (Socket 0),INST
+Core0 (Socket 0),ACYC
+Core0 (Socket 0),TIME(ticks)

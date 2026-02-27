@@ -1,0 +1,406 @@
+{
+  "hwinfo_p_core_0_voltage": {
+    "Value": 0.7156982421875,
+    "Unit": "V"
+  },
+  "hwinfo_p_core_1_voltage": {
+    "Value": 0.7557373046875,
+    "Unit": "V"
+  },
+  "hwinfo_e_core_2_voltage": {
+    "Value": 0.64501953125,
+    "Unit": "V"
+  },
+  "hwinfo_e_core_3_voltage": {
+    "Value": 0.64501953125,
+    "Unit": "V"
+  },
+  "hwinfo_e_core_4_voltage": {
+    "Value": 0.64501953125,
+    "Unit": "V"
+  },
+  "hwinfo_e_core_5_voltage": {
+    "Value": 0.64501953125,
+    "Unit": "V"
+  },
+  "hwinfo_p_core_6_voltage": {
+    "Value": 0.7581787109375,
+    "Unit": "V"
+  },
+  "hwinfo_p_core_7_voltage": {
+    "Value": 0.76318359375,
+    "Unit": "V"
+  },
+  "hwinfo_p_core_8_voltage": {
+    "Value": 0.7557373046875,
+    "Unit": "V"
+  },
+  "hwinfo_p_core_9_voltage": {
+    "Value": 0.770751953125,
+    "Unit": "V"
+  },
+  "hwinfo_e_core_10_voltage": {
+    "Value": 0.6600341796875,
+    "Unit": "V"
+  },
+  "hwinfo_e_core_11_voltage": {
+    "Value": 0.6600341796875,
+    "Unit": "V"
+  },
+  "hwinfo_e_core_12_voltage": {
+    "Value": 0.6600341796875,
+    "Unit": "V"
+  },
+  "hwinfo_e_core_13_voltage": {
+    "Value": 0.6600341796875,
+    "Unit": "V"
+  },
+  "hwinfo_e_core_14_voltage": {
+    "Value": 0.637451171875,
+    "Unit": "V"
+  },
+  "hwinfo_e_core_15_voltage": {
+    "Value": 0.637451171875,
+    "Unit": "V"
+  },
+  "hwinfo_e_core_16_voltage": {
+    "Value": 0.637451171875,
+    "Unit": "V"
+  },
+  "hwinfo_e_core_17_voltage": {
+    "Value": 0.637451171875,
+    "Unit": "V"
+  },
+  "hwinfo_p_core_18_voltage": {
+    "Value": 0.7681884765625,
+    "Unit": "V"
+  },
+  "hwinfo_p_core_19_voltage": {
+    "Value": 0.7607421875,
+    "Unit": "V"
+  },
+  "hwinfo_uncore_vid": {
+    "Value": 1.0560302734375,
+    "Unit": "V"
+  },
+  "hwinfo_p_core_0_clock": {
+    "Value": 400,
+    "Unit": "MHz"
+  },
+  "hwinfo_p_core_1_clock": {
+    "Value": 2200,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_2_clock": {
+    "Value": 400,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_3_clock": {
+    "Value": 400,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_4_clock": {
+    "Value": 400,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_5_clock": {
+    "Value": 400,
+    "Unit": "MHz"
+  },
+  "hwinfo_p_core_6_clock": {
+    "Value": 2200,
+    "Unit": "MHz"
+  },
+  "hwinfo_p_core_7_clock": {
+    "Value": 2200,
+    "Unit": "MHz"
+  },
+  "hwinfo_p_core_8_clock": {
+    "Value": 2200,
+    "Unit": "MHz"
+  },
+  "hwinfo_p_core_9_clock": {
+    "Value": 2200,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_10_clock": {
+    "Value": 400,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_11_clock": {
+    "Value": 400,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_12_clock": {
+    "Value": 400,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_13_clock": {
+    "Value": 400,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_14_clock": {
+    "Value": 400,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_15_clock": {
+    "Value": 400,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_16_clock": {
+    "Value": 400,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_17_clock": {
+    "Value": 400,
+    "Unit": "MHz"
+  },
+  "hwinfo_p_core_18_clock": {
+    "Value": 2200,
+    "Unit": "MHz"
+  },
+  "hwinfo_p_core_19_clock": {
+    "Value": 2200,
+    "Unit": "MHz"
+  },
+  "hwinfo_p_core_0_effective_clock": {
+    "Value": 42.13810749779523,
+    "Unit": "MHz"
+  },
+  "hwinfo_p_core_1_effective_clock": {
+    "Value": 737.7630574066482,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_2_effective_clock": {
+    "Value": 1.0763291954677132,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_3_effective_clock": {
+    "Value": 0.7060897204791334,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_4_effective_clock": {
+    "Value": 0.6206705526979215,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_5_effective_clock": {
+    "Value": 0.6081163260430467,
+    "Unit": "MHz"
+  },
+  "hwinfo_p_core_6_effective_clock": {
+    "Value": 87.9785560889338,
+    "Unit": "MHz"
+  },
+  "hwinfo_p_core_7_effective_clock": {
+    "Value": 46.835071554867945,
+    "Unit": "MHz"
+  },
+  "hwinfo_p_core_8_effective_clock": {
+    "Value": 636.2466422442329,
+    "Unit": "MHz"
+  },
+  "hwinfo_p_core_9_effective_clock": {
+    "Value": 41.372812697573536,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_10_effective_clock": {
+    "Value": 0.723302043070127,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_11_effective_clock": {
+    "Value": 251.01254840627846,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_12_effective_clock": {
+    "Value": 112.47900274374669,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_13_effective_clock": {
+    "Value": 0.326100120317955,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_14_effective_clock": {
+    "Value": 0.3895226870367539,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_15_effective_clock": {
+    "Value": 0.3492678423664171,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_16_effective_clock": {
+    "Value": 0.3460059019860025,
+    "Unit": "MHz"
+  },
+  "hwinfo_e_core_17_effective_clock": {
+    "Value": 0.3356415615208071,
+    "Unit": "MHz"
+  },
+  "hwinfo_p_core_18_effective_clock": {
+    "Value": 61.27740001282045,
+    "Unit": "MHz"
+  },
+  "hwinfo_p_core_19_effective_clock": {
+    "Value": 48.919742526088065,
+    "Unit": "MHz"
+  },
+  "hwinfo_average_effective_clock": {
+    "Value": 103.57519935649854,
+    "Unit": "MHz"
+  },
+  "hwinfo_p_core_0": {
+    "Value": 28,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_p_core_1": {
+    "Value": 28,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_e_core_2": {
+    "Value": 28,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_e_core_3": {
+    "Value": 28,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_e_core_4": {
+    "Value": 28,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_e_core_5": {
+    "Value": 28,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_p_core_6": {
+    "Value": 28,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_p_core_7": {
+    "Value": 28,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_p_core_8": {
+    "Value": 28,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_p_core_9": {
+    "Value": 28,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_e_core_10": {
+    "Value": 28,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_e_core_11": {
+    "Value": 28,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_e_core_12": {
+    "Value": 26,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_e_core_13": {
+    "Value": 28,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_e_core_14": {
+    "Value": 28,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_e_core_15": {
+    "Value": 28,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_e_core_16": {
+    "Value": 28,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_e_core_17": {
+    "Value": 28,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_p_core_18": {
+    "Value": 28,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_p_core_19": {
+    "Value": 30,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_cpu_package": {
+    "Value": 30,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_core_max": {
+    "Value": 30,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_cpu_ia_cores": {
+    "Value": 30,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_cpu_package_power": {
+    "Value": 44.25033456715755,
+    "Unit": "W"
+  },
+  "hwinfo_ia_cores_power": {
+    "Value": 35.9968418902692,
+    "Unit": "W"
+  },
+  "hwinfo_water_in_(\u00B0c)": {
+    "Value": 24.88,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_water_out_(\u00B0c)": {
+    "Value": 23.56,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_air_in_top_(\u00B0c)": {
+    "Value": 21.24,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_air_out_top_(\u00B0c)": {
+    "Value": 26.52,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_air_in_bottom_(\u00B0c)": {
+    "Value": 21.43,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_air_out_bottom_(\u00B0c)": {
+    "Value": 26.15,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_extra_temp_1_(\u00B0c)": {
+    "Value": -111.06,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_extra_temp_2_(\u00B0c)": {
+    "Value": -111.06,
+    "Unit": "\u00B0C"
+  },
+  "hwinfo_fans_voltage_(v)": {
+    "Value": 12.04,
+    "Unit": "V"
+  },
+  "hwinfo_pump_voltage_(v)": {
+    "Value": 12,
+    "Unit": "V"
+  },
+  "hwinfo_aux_voltage_(v)": {
+    "Value": 5.02,
+    "Unit": "V"
+  },
+  "hwinfo_fans_power_(w)": {
+    "Value": 0.62,
+    "Unit": "W"
+  },
+  "hwinfo_pump_power_(w)": {
+    "Value": 11.88,
+    "Unit": "W"
+  },
+  "hwinfo_aux_power_(w)": {
+    "Value": 0,
+    "Unit": "W"
+  }
+}
