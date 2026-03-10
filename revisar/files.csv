@@ -1,0 +1,21 @@
+Nombre Fichero,Descripción,Renombre
+affinity_rotation log,"Registro de prueba Prime95 rotando afinidad de CPU entre 116 combinaciones de cores, midiendo consumo de potencia (29.67W - 154.29W) en sistema híbrido de 20 cores.",affinity_rotation_log
+algo.py,Testeo de acceso a memoria compartida HWiNFO con ctypes.,hwinfo_sharedmem_verify.py
+automatizacion.py,"Generador de combinaciones de afinidad CPU y rotador de cores Prime95, midiendo potencia.",affinity_rotation_generator.py
+GUI test.ps1,"GUI Windows Forms selector de cores visual (P-Cores azul, E-Cores amarillo), muestra layout 20 cores híbrido Core Ultra 7.",core_selector_gui.ps1
+hwinfo.json,,hwinfo_output.json
+interactive cores test 2.ps1,"Selector hibrido: GUI + consola. Busca proceso, muestra layout visual, permite seleccionar cores gráficamente y aplicar afinidad Windows. ",core_selector_hybrid.ps1
+interactive cores test.ps1,"Selector interactivo consola: busca proceso por nombre, despliega mapa cores ASCII coloreado, ingresa cores por CLI y aplica afinidad. ",core_selector_interactive.ps1
+leer_ventiladores_v2.py,Iniciador de LibreHardwareMonitor que lee sensores vía API HTTP.,librehwmonitor_start.py
+librehwmonitor_csv_to_mqtt_todos.csv,,librehwmonitor_mapping.csv
+librehwmonitor_mqtt.py,"Lector de LibreHardwareMonitor vía API HTTP, extrae sensores y los publica por MQTT.",librehwmonitor_mqtt.py
+librehwmonitor.json,,librehwmonitor_output.json
+List_Sensors.py,Enumerador de sensores disponibles en LibreHardwareMonitor con recursión de árbol.,librehwmonitor_enumerate.py
+listar_sensores_FHM.py,Extractor recursivo de árbol de sensores de LibreHardwareMonitor.,librehwmonitor_list.py
+parselibrehwmonitor.py,Normalizador CSV que renumera cores de 0-19 eliminando prefijos P/E.,librehwmonitor_normalize.py
+pcm_parse.py,"Parser CSV en vivo de Intel PCM, imprime métricas por core.",pcm_csv_parser.py
+sensores_normalizados.csv,,sensores_normalized.csv
+sensores.json,,sensores_output.json
+SharedMemAccess.py,Lector de memoria compartida HWiNFO con Windows API ctypes.,sharedmem_hwinfo.py
+test.py,Parser de líneas serie (voltaje/corriente/potencia) y envío a MQTT.,serial_hwinfo_mqtt.py
+wt210.py,"Lector de puerto serial COM4 a 9600 baud, guarda timestamps en CSV.",wt210_serial.py
